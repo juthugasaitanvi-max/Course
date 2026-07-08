@@ -1,0 +1,123 @@
+<!-- What is JavaScript: Its one of the three languages which is important for Web Development. Web Development has 3 main languages:
+ 1. HTML: For designing the pages. 2. CSS: For giving style to the web page. 3. JavaScript: For giving behaviour or functionality to the web page. -->
+
+
+ <!-- Variable: They are containers used to store values in computer's memory. 
+ Rules for naming a Variable: 
+ 1. It cannot start with numbers.
+ 2. The names are case-sensitive.
+ 3. It cannot be named the same as a keyword (Keywords are pre-defined words that have functionality of their own.).
+ 4. The names cannot have spaces in between.
+
+Example:
+name = "Saitanvi"
+console.log(showing the value on the terminal.)
+ -->
+
+ <!-- Statement: They are programming instructions. 
+  Statements are values, opertors (+,-,*,/,>,<,==), Expressions(They are like any piece of code that produces value, ex: 5+3) , Keyword or comments (They are not executed, but helps us keep track of what we do.).
+ -->
+
+
+ <!-- Data types: They are classification of different kinds of data.
+  1. Number : Any whole number. exapmle: 5,1,-1
+  2. String : Any set of character, which are inside '' or "".
+  3. Boolean : Two values i.e. True or False.
+  4. Object : Collection of data that must be related. {"Name":"Saitanvi"}
+ -->
+
+ <!-- Operators: An operator is a character that performs specific tasks in the code. There are two types of operators:
+  1. Arithmetic Operators: Used to perform mathematical operations. Types : +,-,*,/
+  2. Assignment Operators: Assigns values to its left operand based on the values of its right operand. Types: +=,-,=,*=,/= and most important =.
+  
+ -->
+
+ <!-- name="Saitanvi" -->
+
+
+
+
+<!-- This is a HTML document showing the name. -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> -->
+    <!-- Used for displaying  the name of our website -->
+    <!-- <title>Saitanvi's First HTML Page</title>   -->
+<!-- </head> -->
+<!-- <body> -->
+    <!-- #heading tags: It has a range from h1 to h6. H1 being the largest and h6 being the smallest. -->
+    <!-- <h1 id="heading1">  </h1>  -->
+    <!-- # paragraph tag  -->
+    <!-- <p></p>  -->
+
+    <!-- <script>
+        document.getElementById("heading1").innerHTML="My Name is : Saitanvi"
+        document.getElementsByName("p").innerHTML="I am a student at codingal"
+    </script> -->
+<!-- 
+    </body>
+</html> -->
+
+
+<!-- Activity 4:
+1) Start the HTML document with `<!DOCTYPE html>`.
+
+2) Open the `<html>` tag.
+
+3) Inside the `<body>` tag:
+
+4) Add a heading using `<h2>`:
+   a) Text: "Operator"
+
+5) Create an empty paragraph to display the result:
+   a) Use `<p id="demo"></p>`
+   b) This is where the calculated value will appear.
+
+6) Add a `<script>` tag to write JavaScript code.
+
+7) Inside the `<script>` tag:
+   a) Add a comment to indicate the operation being performed:
+      - Example: `// Addition`
+   b) Add a comment reminding that JavaScript supports operators like:
+      `+`, `-`, `*`, `/`
+
+8) Create two variables:
+   a) `x` with value `5`
+   b) `y` with value `2`
+
+9) Create a variable `z`:
+   a) Add `x` and `y` using the `+` operator
+   b) Store the result in `z`
+
+10) Display the value of `z` on the webpage:
+    a) Use `document.getElementById("demo").innerHTML = z;`
+
+11) Close all tags properly:
+    a) Close `</script>`, `</body>`, and `</html>`.
+-->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Operator</h2>
+    <p id="demo"></p>
+
+    <script>
+        // Additon:
+        let x=5;
+        let y=2;
+        let z=x+y
+
+        document.getElementById("demo").innerHTML="This is the sum of x and y: "+ z;
+
+    </script>
+</body>
+</html>
