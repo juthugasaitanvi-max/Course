@@ -1,0 +1,144 @@
+<!-- Function: They are block of codes designed to perform specific task. Funcion gets executed only when its called or invoked
+ Syntax: 
+
+ function my_func(a,b){ //function declaring // a,b: arguments
+ statements 1
+ staments 2
+ ...
+ }
+
+my_func(3,4) //function calling or invoking, 3,4: parameters
+
+
+
+
+
+
+
+-->
+
+<!--
+1) Start the HTML document with `<!DOCTYPE html>`.
+
+2) Open the `<html>` tag.
+
+3) Inside the `<head>` section:
+   a) Keep the `<head>` tag (it can be empty for this example).
+
+4) Inside the `<body>` section:
+
+5) Create a button using `<button>`:
+   a) Add an `onclick` attribute to call the function:
+      `onclick="myfunction(5)"`
+   b) Set button text: "Execute JS function"
+   c) NOTE: Only one value (5) is passed, so the second parameter should be handled as optional.
+
+6) Add a `<script>` tag to write JavaScript code.
+
+7) Inside the `<script>` tag:
+   a) Create a function named `myfunction` that accepts two parameters: `x` and `y`.
+
+8) Handle the default value for `y`:
+   a) Check if `y` is `undefined` using:
+      `if (y === undefined)`
+   b) If it is undefined, set `y = 2`.
+
+9) Multiply `x` and `y`:
+   a) Use `x * y` to calculate the product.
+
+10) Display the result:
+    a) Use `document.write(x * y);` to write the result on the page.
+
+11) Close all tags properly:
+    a) Close `</script>`, `</body>`, and `</html>`.
+-->
+
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document related to Functions</title>
+ </head>
+ <body>
+    <button onclick="myfunction(5)">Execute JS Function</button>
+
+
+    <script>
+function myfunction(x,y){
+    if(y==undefined){
+        y=2;
+    }
+    document.write(x*y)
+}
+
+
+
+    </script>
+
+ </body>
+ </html>
+
+
+//Activity 2:
+
+ <!--
+1) Start the HTML document with `<!DOCTYPE html>`.
+
+2) Open the `<html>` tag.
+
+3) Inside the `<body>` section:
+
+4) Add a paragraph `<p>` that explains the concept: <p>A function can access variables defined inside the function:</p>
+   a) Text: "A function can access variables defined inside the function:"
+
+5) Add a button:
+   a) Use `<button type="button">Click Me!</button>`
+   b) Add `onclick="myFunction()"` so the function runs when clicked.
+
+6) Add output placeholders using paragraph tags:
+   a) `<p id="demo"></p>` for showing the multiplication result.
+   b) `<p id="demo1"></p>` for showing a value after clicking (optional extra output).
+   c) (If needed) Create another paragraph `<p id="demo2"></p>` for showing the value of `b`
+      because your code tries to update `demo2`.
+
+7) Add a `<script>` tag to write JavaScript.
+
+8) Inside the `<script>` tag:
+   a) Create a global variable `b` and store `5` in it.
+      - This variable can be accessed anywhere in the script.
+
+9) Create a function named `myFunction()`:
+   a) Inside the function, create a local variable `a` and store `4` in it.
+      - This variable exists ONLY inside the function.
+   b) Multiply `b * a` and display the result in the element with id `"demo"`.
+
+10) Important scope rule (what NOT to do):
+    a) Do NOT try to use `a` outside the function.
+       - Because `a` is local, it will cause an error if accessed outside `myFunction()`.
+
+11) If you want to display `b` outside the function:
+    a) Update `"demo2"` with `b` (only after adding `<p id="demo2"></p>` in HTML).
+
+12) Close all tags properly:
+    a) Close `</script>`, `</body>`, and `</html>`.
+-->
+
+//Activity 3:
+<!--
+1) Start with `<!DOCTYPE html>` and open `<html>`.
+
+2) In `<head>`, set the title: `<title>Function Declaration</title>`.
+
+3) In `<body>`, use `<center>` to center the content.
+
+4) Add headings:
+   a) `<h1 style="color:green">Codingal Education</h1>`
+   b) `<h3>Function Declaration</h3>`
+
+5) In a `<script>` tag:
+   a) Store a function in `result` that returns `a * b`.
+   b) Print `result(5, 8)` using `document.write()`.
+
+6) Close all tags: `</script>`, `</center>`, `</body>`, `</html>`.
+-->
