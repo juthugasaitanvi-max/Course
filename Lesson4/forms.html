@@ -1,0 +1,103 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <fieldset>
+            <legend>Personal Details</legend>
+         <label>Name: </label>
+        <input type="text">
+        <label>Password: </label>
+        <input type="password">
+        <label>Email: </label>
+        <input type="email">
+        </fieldset>
+  
+        <label>Date: </label>
+        <input type="date">
+        <label>Online: </label>      
+        <input type="radio">
+        <label>Terms & Conditions: </label>
+        <input type="checkbox">
+        <select id="games">
+            <option value="">Select a game from the list</option>
+            <option value="carrom">Carrom</option>
+            <option value="uno">UNO</option>
+            <option value="chess">Chess</option>
+            <option value="ludo">Ludo</option>
+        </select>
+        <label>Notes</label>
+        <textarea placeholder="Add notes for the forms" rows="3" cols="35"></textarea>
+        <button>Submit</button>
+    </form>
+</body>
+</html>-->
+
+<!-- A doctor's appointment form with grouped sections, a drop-down to choose a doctor, date of birth, visit reason, notes, preferred visit day, and a Book My Appointment button. -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Doctor's Appointment Form</h1>
+     <p>Fill out the form to book your appointment.</p>
+    
+      <form>
+           <fieldset>
+            <legend>Personal Details</legend>
+             <label >Name: </label>
+             <input type="text" id="name" placeholder="Enter your name: " required> <br><br>
+             <label >Patient ID: </label>
+             <input type="password" id="pid" placeholder="Your secret Id"><br><br>
+             <label >Date of Birth: </label>
+             <input type="date" id="dob" required><br><br>
+           </fieldset>
+                     
+            <fieldset>
+             <legend>Appointment Details</legend>
+             <label >Choose a Doctor: </label>
+             <select id="doctor" required>
+                 <option value="">Select a doctor</option>
+                 <option value="dr_smith">Dr. Smith</option>
+                 <option value="dr_johnson">Dr. Johnson</option>
+                 <option value="drWilliams">Dr. Williams</option>
+             </select><br><br>
+             <label >Visit Reason: </label>
+             <input type="text" id="reason" placeholder="Briefly describe your reason for the visit"><br><br>
+             <label >Notes: </label>
+             <textarea id="notes" placeholder="Add any additional notes"></textarea><br><br>
+            </fieldset> 
+            
+            
+
+            <fieldset>
+             <legend>Preferred Visit Day</legend>
+             <label >Select a day: </label>
+             <input type="radio" name="visit_day" value="monday" required> Monday
+             <input type="radio" name="visit_day" value="tuesday"> Tuesday
+             <input type="radio" name="visit_day" value="wednesday"> Wednesday
+             <input type="radio" name="visit_day" value="thursday"> Thursday
+             <input type="radio" name="visit_day" value="friday"> Friday<br><br>
+             </fieldset>    
+             <br>
+
+             <input type="submit" value="Book My Appointment">
+            
+      </form>
+    
+
+
+
+
+
+</body>
+</html>
