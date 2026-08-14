@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Zoo Rescue Tracker</title>
+  <style>
+  
+  .sticky-nav {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    background: #ffca28;
+    padding: 15px;
+    text-align: center;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+    font-weight: bold;
+    font-style: italic;
+  }
+
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #eef8f1;
+  color: #26352a;
+}
+
+
+.header {
+  text-align: center;
+  padding: 35px 20px;
+  background: #2e7d32;
+  color: white;
+  font-weight: bold;
+    font-style: italic;
+}
+
+.header h1 {
+  margin: 0 0 10px;
+  font-size: 40px;
+  font-weight: bold;
+    font-style: italic;
+}
+
+.header p {
+  margin: 0;
+  font-size: 18px;
+  font-weight: bold;
+    font-style: italic;
+}
+
+
+.sticky-nav {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: #ffca28;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.2);
+  font-weight: bold;
+    font-style: italic;
+}
+
+.sticky-nav a {
+  margin: 0 20px;
+  color: #26352a;
+  text-decoration: none;
+  font-weight: bold;
+  font-weight: bold;
+    font-style: italic;
+}
+
+.sticky-nav a:hover {
+  text-decoration: underline;
+}
+
+
+main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+.intro,
+.tracker,
+.position-demo,
+.about {
+  margin: 30px 20px;
+  padding: 30px;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+  color: #2e7d32;
+}
+
+
+.animal-card {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+  font-weight: bold;
+    font-style: italic;
+}
+
+.animal {
+  position: relative;
+  flex: 1;
+  min-width: 250px;
+  padding: 25px;
+  background: #fff3cd;
+  border-radius: 12px;
+  border: 2px solid #f1c40f;
+  font-weight: bold;
+    font-style: italic;
+}
+
+
+.relative {
+  position: relative;
+  left: 15px;
+  top: 10px;
+  font-weight: bold;
+    font-style: italic;
+}
+
+
+.tag {
+  position: absolute;
+  top: -12px;
+  left: 15px;
+  background: #1565c0;
+  color: white;
+  padding: 5px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: bold;
+  font-weight: bold;
+    font-style: italic;
+}
+
+
+.special {
+  min-height: 170px;
+  font-weight: bold;
+    font-style: italic;
+}
+
+.badge {
+  position: absolute;
+  right: 12px;
+  bottom: 12px;
+  background: #e53935;
+  color: white;
+  padding: 7px 10px;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+
+.box-container {
+  min-height: 280px;
+  position: relative;
+  border: 3px dashed #81c784;
+  padding: 20px;
+}
+
+.box {
+  width: 130px;
+  padding: 20px;
+  text-align: center;
+  color: white;
+  font-weight: bold;
+    font-style: italic;
+  border-radius: 10px;
+  margin: 15px;
+}
+
+.normal {
+  position: static;
+  background: #546e7a;
+  font-weight: bold;
+    font-style: italic;
+}
+
+
+.move {
+  position: relative;
+  left: 80px;
+  background: #8e44ad;
+  font-weight: bold;
+    font-style: italic;
+}
+
+
+.parent {
+  position: relative;
+  height: 100px;
+  border: 2px solid #ddd;
+  margin-top: 20px;
+  font-weight: bold;
+    font-style: italic;
+}
+
+.absolute {
+  position: absolute;
+  right: 20px;
+  top: 20px;
+  background: #e67e22;
+  margin: 0;
+  font-weight: bold;
+    font-style: italic;
+}
+
+
+.explanation {
+  line-height: 1.7;
+  margin-top: 25px;
+  font-weight: bold;
+    font-style: italic;
+}
+
+
+.about {
+  line-height: 1.7;
+  font-weight: bold;
+    font-style: italic;
+}
+
+
+.fixed-help {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: #d32f2f;
+  color: white;
+  padding: 15px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+  font-weight: bold;
+    font-style: italic;
+}
+
+
+footer {
+  text-align: center;
+  padding: 25px;
+  margin-top: 30px;
+  background: #1b5e20;
+  color: white;
+  font-weight: bold;
+    font-style: italic;
+}
+
+
+@media (max-width: 700px) {
+  .header h1 {
+    font-size: 30px;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  .sticky-nav a {
+    margin: 0 8px;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  .animal-card {
+    flex-direction: column;
+    font-weight: bold;
+    font-style: italic;
+  }
+
+  .relative {
+    left: 0;
+    font-weight: bold;
+    font-style: italic;
+  }
+}
+
+</style>
+
+</head>
+<body>
+
+  <header class="header">
+    <h1 style="font-weight: bold; font-style: italic;">🐾 Zoo Rescue Tracker</h1>
+    <p style="font-weight: bold; font-style: italic;">Track rescued animals and learn how CSS positioning works!</p>
+  </header>
+
+  <nav class="sticky-nav">
+    <a href="#home">Home</a>
+    <a href="#animals">Animals</a>
+    <a href="#about">About</a>
+  </nav>
+
+  <main id="home">
+
+    <section class="intro">
+      <h2>Animal Rescue Mission</h2>
+      <p style="font-weight: bold; font-style: italic;">
+        Our zoo team works hard to rescue, protect, and care for animals.
+        This page demonstrates different CSS positioning techniques.
+      </p>
+    </section>
+
+    <section id="animals" class="tracker">
+      <h2 style="font-weight: bold; font-style: italic;">🐯 Rescue Tracker</h2>
+
+      <div class="animal-card">
+        <div class="animal relative">
+          <span class="tag">RELATIVE</span>
+          <h3>🦁 Leo the Lion</h3>
+          <p style="font-weight: bold; font-style: italic;">Rescued from a dangerous forest area.</p>
+        </div>
+
+        <div class="animal">
+          <span class="tag">STATIC</span>
+          <h3>🐘 Ellie the Elephant</h3>
+          <p style="font-weight: bold; font-style: italic;">Now receiving care at the zoo.</p>
+        </div>
+
+        <div class="animal special">
+          <span class="tag">ABSOLUTE</span>
+          <span class="badge">⭐ RESCUED</span>
+          <h3>🐼 Pandy the Panda</h3>
+          <p style="font-weight: bold; font-style: italic;">Our newest rescue and everyone's favorite!</p>
+        </div>
+      </div>
+    </section>
+
+    
+    <section id="about" class="about">
+      <h2>🌿 About the Rescue Team</h2>
+      <p style="font-weight: bold; font-style: italic;">
+        Every rescued animal deserves a safe home. Our team provides food,
+        shelter, medical attention, and plenty of love while helping animals
+        return to a healthy life.
+      </p>
+    </section>
+
+  </main>
+
+  <div class="fixed-help">
+    🆘 Rescue Help
+  </div>
+
+  <footer>
+    <p>© 2026 Zoo Rescue Tracker | Learn CSS by helping animals!</p>
+  </footer>
+
+</body>
+</html>
