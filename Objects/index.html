@@ -1,0 +1,72 @@
+<!-- Creating a JavaScript object, defining key:value properties, reading values with dot notation, reading values with
+bracket notation, and updating the page using document.getElementByld() and .textContent.
+
+STEPS
+Step 1: Open a new file called my-phone-contact.html.
+Step 2: Add the HTML boilerplate (DOCTYPE, html, head, body) and paste the Bootstrap 5 CDN link inside the
+<head> tag.
+Step 3: Add an <h1> heading reading "My Phone Contact" and a short subtitle paragraph.
+Step 4: Build a Bootstrap card with four list items - one each for name, phone, school, and city. Give each its
+own id: id="name", id="phone", id="school", id="city".
+Step 5: Add a second Bootstrap card below to act as a code display box with id="codeDisplay".
+Step 6: Inside a <script> tag at the bottom of <body>, create var myContact = { } with 4 properties: name,
+phone, school, city.
+Step 7: Use document.getElementByld() and dot notation to display myContact.name and myContact.phone in
+the matching elements.
+Step 8: Use document.getElementByld() and bracket notation to display myContact["school"] and
+myContact["city"] in the matching elements. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Phone Contact</title>
+</head>
+<body>
+    <div>
+<h1>My Phone Contact</h1> 
+    </div>
+    <div>
+      <li id="name">Name</li>
+      <li id="number">Phone Number</li>
+      <li id="city">City</li>
+      <li id="school">School</li>  
+    </div>
+
+        <div class="card shadow-sm" style="max-width:400px;">
+      <div class="card-body">
+        <h6 style="color:#FF5A43;">JavaScript Object Used</h6>
+        <pre id="codeDisplay"
+          class="bg-light p-3 rounded border mb-0"></pre>
+      </div>
+    </div>
+
+    <script>
+         let phone_contact={
+    name:"Saitanvi",
+    phone_number :"1234509876",
+    school_name:"Triumphant Institute of Management Education",
+    city:"Hyderabad",
+}
+
+let name=document.getElementById("name").textContent=phone_contact.name
+let phone=document.getElementById("number").textContent=phone_contact.phone_number
+let city=document.getElementById("city").textContent=phone_contact.city
+let school=document.getElementById("school").textContent=phone_contact.school_name
+ 
+let code=document.getElementById("codeDisplay");
+code.textContent= 'let phone_contact = {\n' +
+      '  name:   "' + phone_contact.name + '",\n' +
+      '  phone:  "' + phone_contact.phone_number + '",\n' +
+      '  school: "' + phone_contact["school_name"] + '",\n' +
+      '  city:   "' + phone_contact["city"] + '"\n' +
+      '};';
+
+
+
+</script>
+</body>
+</html>
+
+
