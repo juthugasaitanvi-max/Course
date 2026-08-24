@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Object Data Structure and Array</title>
+</head>
+<body>
+
+  <h1>Object Data Structure and Array</h1>
+
+  <p id="output"></p>
+
+  <script>
+    
+    var student = {
+      name: "Saitanvi",
+      age: 10,
+      grade: 7
+    };
+
+    document.getElementById("output").innerHTML =
+      "Name: " + student.name + "<br>" +
+      "Age: " + student.age + "<br>" +
+      "Grade: " + student.grade + "<br><br>";
+
+    var fruits = ["Apple", "Kiwi", "Pear", "Avocado", "Watermelon"];
+
+    
+    document.getElementById("output").innerHTML +=
+      "First fruit: " + fruits[0] + "<br>" +
+      "Second fruit: " + fruits[1] + "<br>" +
+      "Third fruit: " + fruits[2] + "<br><br>";
+
+    
+    document.getElementById("output").innerHTML +=
+      "Whole array: " + fruits.join(", ") + "<br><br>";
+
+    
+    var removedFruit = fruits.pop();
+
+    document.getElementById("output").innerHTML +=
+      "Removed fruit: " + removedFruit + "<br>" +
+      "Array after pop(): " + fruits.join(", ");
+  </script>
+
+</body>
+</html>
