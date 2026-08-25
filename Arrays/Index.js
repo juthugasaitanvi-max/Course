@@ -107,9 +107,34 @@
 //    a) Use `document.getElementById("demo").innerHTML = result;`
 
 // 8) Close all tags properly.
-// -->
 
+// Activity 2:
 
+        var fruits = ["Banana", "Orange", "Apple", "Mango"];
 
+        document.getElementById("myjoin").innerHTML =
+            fruits.join(" * ");
 
+        document.getElementById("myfirstpop").innerHTML =
+            fruits;
 
+        fruits.pop();
+
+        document.getElementById("mysecondpop").innerHTML =
+            fruits;
+
+// Activity 3:
+
+        function add(a, b) {
+            return a + b;
+        }
+
+        function average(a, b) {
+            var sum = add(a, b);
+            return sum / 2;
+        }
+
+        var result = average(10, 20);
+
+        document.getElementById("demo").innerHTML = result;
+    
