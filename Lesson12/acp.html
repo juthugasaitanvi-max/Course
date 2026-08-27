@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Digital Zoo Manager</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #dff9fb, #c7ecee);
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #145a32;
+            font-size: 36px;
+        }
+
+        h2 {
+            color: #117864;
+        }
+
+        .zoo {
+            width: 90%;
+            max-width: 900px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .intro {
+            font-size: 18px;
+            color: #555;
+        }
+
+        .zones {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 25px 0;
+        }
+
+        .zone {
+            width: 180px;
+            padding: 20px;
+            border-radius: 15px;
+            color: white;
+            font-size: 18px;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .zone:hover {
+            transform: scale(1.08);
+        }
+
+        .lion {
+            background-color: #e67e22;
+        }
+
+        .elephant {
+            background-color: #7f8c8d;
+        }
+
+        .monkey {
+            background-color: #8e44ad;
+        }
+
+        .penguin {
+            background-color: #2c3e50;
+        }
+
+        .animals {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f9f9;
+            border-radius: 15px;
+        }
+
+        .animal {
+            display: inline-block;
+            padding: 12px 18px;
+            margin: 8px;
+            background-color: #82e0aa;
+            border-radius: 10px;
+            font-weight: bold;
+        }
+
+        button {
+            padding: 12px 20px;
+            margin: 8px;
+            border: none;
+            border-radius: 10px;
+            background-color: #148f77;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0e6251;
+        }
+
+        #output {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #fcf3cf;
+            border-radius: 15px;
+            min-height: 80px;
+        }
+
+        .highlight {
+            background-color: #f7dc6f !important;
+            color: #7d6608;
+            transform: scale(1.05);
+        }
+
+        #nodeInfo {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #ebdef0;
+            border-radius: 12px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="zoo">
+
+        <h1>🦁 My Digital Zoo Manager 🐘</h1>
+
+        <p class="intro">
+            Welcome to my digital zoo! Use JavaScript to explore the DOM,
+            find parent, child and sibling nodes, identify node types,
+            and change webpage content and styles.
+        </p>
+
+        <h2>🌳 Zoo Animal Zones</h2>
+
+        <div id="zooContainer" class="zones">
+
+            <div id="lionZone" class="zone lion">
+                🦁 Lion Zone
+                <div class="animal" id="lion">Lion</div>
+            </div>
+
+            <div id="elephantZone" class="zone elephant">
+                🐘 Elephant Zone
+                <div class="animal" id="elephant">Elephant</div>
+            </div>
+
+            <div id="monkeyZone" class="zone monkey">
+                🐒 Monkey Zone
+                <div class="animal" id="monkey">Monkey</div>
+            </div>
+
+            <div id="penguinZone" class="zone penguin">
+                🐧 Penguin Zone
+                <div class="animal" id="penguin">Penguin</div>
+            </div>
+
+        </div>
+
+        <h2>🔍 Explore the DOM</h2>
+
+        <button onclick="showParent()">
+            Find Parent
+        </button>
+
+        <button onclick="showChildren()">
+            Find Children
+        </button>
+
+        <button onclick="showSibling()">
+            Find Sibling
+        </button>
+
+        <button onclick="showNodeType()">
+            Check Node Type
+        </button>
+
+        <button onclick="changeContent()">
+            Change Content
+        </button>
+
+        <button onclick="changeStyle()">
+            Change Style
+        </button>
+
+        <div id="output">
+            <h3>📋 DOM Information</h3>
+            <p>Click a button above to explore the zoo DOM.</p>
+        </div>
+
+        <div id="nodeInfo">
+            <h3>🌟 Selected Animal</h3>
+            <p id="selectedAnimal">Lion</p>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        
+        let lion = document.getElementById("lion");
+
+        // Select output area
+        let output = document.getElementById("output");
+
+
+       
+        function showParent() {
+
+            let parent = lion.parentElement;
+
+            output.innerHTML =
+                "<h3>👨‍👦 Parent Node</h3>" +
+                "<p>The parent of <b>Lion</b> is: <b>" +
+                parent.className +
+                "</b></p>";
+        }
+
+
+        
+
+        function showChildren() {
+
+            let zoo = document.getElementById("zooContainer");
+
+            let children = zoo.children;
+
+            let result = "";
+
+            for (let i = 0; i < children.length; i++) {
+                result += children[i].innerText + "<br>";
+            }
+
+            output.innerHTML =
+                "<h3>👶 Child Elements</h3>" +
+                "<p>The zoo container has these child elements:</p>" +
+                result;
+        }
+
+
+        
+        function showSibling() {
+
+            let lionZone = document.getElementById("lionZone");
+
+            let sibling = lionZone.nextElementSibling;
+
+            output.innerHTML =
+                "<h3>👫 Sibling Node</h3>" +
+                "<p>The next sibling of Lion Zone is: <b>" +
+                sibling.innerText.split("\n")[0] +
+                "</b></p>";
+        }
+
+
+
+        function showNodeType() {
+
+            let lion = document.getElementById("lion");
+
+            let nodeType = lion.nodeType;
+
+            let typeName;
+
+            if (nodeType === 1) {
+                typeName = "Element Node";
+            }
+            else if (nodeType === 3) {
+                typeName = "Text Node";
+            }
+            else {
+                typeName = "Other Node";
+            }
+
+            output.innerHTML =
+                "<h3>🔢 Node Type</h3>" +
+                "<p>Lion node type number: <b>" +
+                nodeType +
+                "</b></p>" +
+                "<p>This is an <b>" +
+                typeName +
+                "</b>.</p>";
+        }
+
+
+        
+        function changeContent() {
+
+            let animal = document.getElementById("selectedAnimal");
+
+            animal.innerHTML =
+                "🦒 Giraffe has joined our zoo!";
+
+            output.innerHTML =
+                "<h3>✏️ Content Updated</h3>" +
+                "<p>The selected animal text was changed using JavaScript.</p>";
+        }
+
+
+
+        function changeStyle() {
+
+            let lion = document.getElementById("lion");
+
+            lion.classList.toggle("highlight");
+
+            output.innerHTML =
+                "<h3>🎨 Style Updated</h3>" +
+                "<p>The Lion element's style was changed using JavaScript.</p>";
+        }
+
+
+        
+
+        document.getElementById("lionZone").onclick = function () {
+
+            document.getElementById("selectedAnimal").innerHTML =
+                "🦁 Lion";
+        };
+
+
+        document.getElementById("elephantZone").onclick = function () {
+
+            document.getElementById("selectedAnimal").innerHTML =
+                "🐘 Elephant";
+        };
+
+
+        document.getElementById("monkeyZone").onclick = function () {
+
+            document.getElementById("selectedAnimal").innerHTML =
+                "🐒 Monkey";
+        };
+
+
+        document.getElementById("penguinZone").onclick = function () {
+
+            document.getElementById("selectedAnimal").innerHTML =
+                "🐧 Penguin";
+        };
+
+    </script>
+
+</body>
+</html>
