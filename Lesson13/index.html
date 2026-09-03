@@ -1,0 +1,100 @@
+<!-- My Game Profile(HTML)
+Outline:
+You will build a Game Profile page using JavaScript. The page has a button — Show Profile — and a list of labelled rows. When you click the button, JavaScript fills in each row with your player name, game, score, whether you set a new record, your rank badge, a time-of-day greeting, a star trail, and two missing values that show null and undefined. -->
+
+<!--
+Instructions for the Script(Javascript): 
+Step 1: Declare your variables - use let for name, gameName, myScore, and highScore. Set bonus to null and declare team without a value.
+Step 2: Use == to check if myScore equals highScore. Store the true or false result in isTopScore.
+Step 3: Write an if/else to set rank. Score 80 or above gets Gold. Score 50 or above gets Silver. Anything else gets Bronze.
+Step 4: Use new Date().getHours() to get the current hour. Write if/else to set greeting to Good Morning, Good Afternoon, or Good Evening.
+Step 5: Write a while loop. Start with stars as an empty string and count at 0. Each loop, add " " to stars and add 1 to count. Stop when count reaches 5.
+Step 6: Use document.getElementByld().innerHTML to show each value in the matching row. For the score row, use + to join myScore, " out of", and highScore together. -->
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Game Profile</title>
+</head>
+<body>
+
+    <h1>My Game Profile</h1>
+
+    <button onclick="showProfile()">Show Profile</button>
+
+    <p>Player Name: <span id="playerName"></span></p>
+    <p>Game: <span id="gameName"></span></p>
+    <p>Score: <span id="score"></span></p>
+    <p>New Record: <span id="record"></span></p>
+    <p>Rank Badge: <span id="rank"></span></p>
+    <p>Greeting: <span id="greeting"></span></p>
+    <p>Star Trail: <span id="stars"></span></p>
+    <p>Bonus: <span id="bonus"></span></p>
+    <p>Team: <span id="team"></span></p>
+
+    <script>
+        function showProfile() {
+
+            
+            let name = "Saitanvi";
+            let gameName = "Super Mario";
+            let myScore = 80;
+            let highScore = 80;
+
+            let bonus = null;
+            let team;
+
+            
+            let isTopScore = (myScore == highScore);
+
+            
+            let rank;
+
+            if (myScore >= 80) {
+                rank = "Gold";
+            } else if (myScore >= 50) {
+                rank = "Silver";
+            } else {
+                rank = "Bronze";
+            }
+
+            
+            let hour = new Date().getHours();
+            let greeting;
+
+            if (hour < 12) {
+                greeting = "Good Morning";
+            } else if (hour < 18) {
+                greeting = "Good Afternoon";
+            } else {
+                greeting = "Good Evening";
+            }
+
+            
+            let stars = "";
+            let count = 0;
+
+            while (count < 5) {
+                stars = stars + "⭐";
+                count = count + 1;
+            }
+
+            
+            document.getElementById("playerName").innerHTML = name;
+            document.getElementById("gameName").innerHTML = gameName;
+            document.getElementById("score").innerHTML =
+                myScore + " out of " + highScore;
+            document.getElementById("record").innerHTML = isTopScore;
+            document.getElementById("rank").innerHTML = rank;
+            document.getElementById("greeting").innerHTML = greeting;
+            document.getElementById("stars").innerHTML = stars;
+            document.getElementById("bonus").innerHTML = bonus;
+            document.getElementById("team").innerHTML = team;
+        }
+    </script>
+
+</body>
+</html>
+
+
