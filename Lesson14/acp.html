@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>My Superhero Power Cards</title>
+
+    <style>
+        
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #1e3c72, #2a5298);
+            margin: 0;
+            padding: 30px;
+            text-align: center;
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 30px;
+            font-size: 40px;
+        }
+
+        
+        #heroContainer {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 25px;
+        }
+
+        
+        .hero-card {
+            background: white;
+            width: 250px;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        
+        .hero-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .hero-card h2 {
+            color: #1e3c72;
+            margin-bottom: 20px;
+        }
+
+        .hero-card p {
+            font-size: 16px;
+            margin: 12px 0;
+        }
+
+        .power {
+            color: #e63946;
+            font-weight: bold;
+        }
+
+        .level {
+            color: #f4a261;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>🦸 My Superhero Power Cards ⚡</h1>
+
+   
+    <div id="heroContainer"></div>
+
+    <script>
+        
+        class Superhero {
+
+            
+            constructor(name, power, weakness, level) {
+                this.name = name;
+                this.power = power;
+                this.weakness = weakness;
+                this.level = level;
+            }
+
+                        displayCard() {
+                const container = document.getElementById("heroContainer");
+
+                const card = document.createElement("div");
+                card.className = "hero-card";
+
+                card.innerHTML = `
+                    <h2>🦸 ${this.name}</h2>
+                    <p class="power">⚡ Power: ${this.power}</p>
+                    <p>🛡️ Weakness: ${this.weakness}</p>
+                    <p class="level">⭐ Power Level: ${this.level}</p>
+                `;
+
+                container.appendChild(card);
+            }
+        }
+
+        
+        const hero1 = new Superhero(
+            "Thunder Bolt",
+            "Controls Lightning",
+            "Water",
+            95
+        );
+
+        const hero2 = new Superhero(
+            "Shadow Girl",
+            "Becomes Invisible",
+            "Bright Light",
+            88
+        );
+
+        const hero3 = new Superhero(
+            "Fire Man",
+            "Controls Fire",
+            "Ice",
+            92
+        );
+
+        
+        hero1.displayCard();
+        hero2.displayCard();
+        hero3.displayCard();
+    </script>
+
+</body>
+</html>

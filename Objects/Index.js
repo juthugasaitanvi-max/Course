@@ -31,9 +31,3 @@ let phone_contact={
 }
   console.log(phone_contact.school_name)
  
-
-
-
-
-
-
