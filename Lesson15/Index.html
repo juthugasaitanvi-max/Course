@@ -1,0 +1,27 @@
+<!-- My Magic Word Lab(HTML&JavaScript)
+Outline:
+You will build a My Magic Word Lab page with four Bootstrap cards — one for each topic. The first card reveals the types of a score, a name, and a game-over flag using typeof. The second card lets you type a number and convert it to a string or back to a number using String() and Number(). The third card lets you search for and replace any word in a sentence using search() and replace(). The fourth card lets you divide 100 by any input and safely catches mistakes using try/catch.
+
+
+Step 1: Open a new HTML file and add the basic HTML structure - DOCTYPE, html, head, and body tags.
+Step 2: In the head section, paste the Bootstrap 4.3.1 CDN link and add a style block with three rules: body
+{ background: lightyellow, }, h1, h3 { color: darkorange; ], and .box { background: white; color: darkorange; }.
+Step 3: Inside the body, add a div with class="container py-4". Inside it, add an h1 heading 'My Magic Word
+Lab' with class="mb-1" and a paragraph subtitle with class="text-muted mb-4".
+Step 4: Add the first Bootstrap card -h3 'What Type Is It?', a button 'Reveal the Types!' with class="btn
+btn-warning" and onclick="checkTypes()", and a result div with id="typeResult" and class="box p-3 mt-3
+rounded".
+Step 5: Add the second Bootstrap card -h3 "Switch the Type', an input with id="numin" and placeholder
+Type any number here (try: 42y, two buttons 'Turn into Text' (onclick="toStr()") and 'Turn into Number'
+(onclick="toNum()"), and a result div with id="convResult" and class="box p-3 mt-3 rounded".
+Step 6: Add the third Bootstrap card-h3 'Find and Swap a Word', two inputs with id="findW" (placeholder
+"Word to find (try: dragon)') and id="swapW" (placeholder 'Swap it with (try: wizard)'), two buttons 'Find It!'
+(onclick="doSearch()") and "Swap It!' (onclick="doReplace()"), and a result div with id="srResult" showing the
+starting sentence.
+Step 7: Add the fourth Bootstrap card -h3 'Catch the Mistake', an input with id="divln" and a fun
+placeholder, a button 'Try It!' (onclick="trySafe()"), and a result div with id="errResult" and class="box p-3 mt-
+3 rounded".
+Step 8: Add a script tag at the bottom of the body. Declare var sen = "The dragon flew over the big castle.".
+Write five functions: checkTypes() using typeof on 42, 'Alex', and true; toStr() using String(); toNum() using
+Number(); doSearch() using sen.search() showing the position or a not-found message; doReplace() using
+sen.replace(); and trySafe() using try/catch with throw for invalid input. Save and test all buttons. -->

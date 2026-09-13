@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Text Fixer Tool</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            padding: 30px;
+        }
+
+        .container {
+            max-width: 700px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 15px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        textarea {
+            width: 90%;
+            height: 100px;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 2px solid #ccc;
+        }
+
+        button {
+            margin: 10px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+            background-color: #4CAF50;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #388E3C;
+        }
+
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #eeeeee;
+            border-radius: 10px;
+            text-align: left;
+        }
+
+        .result p {
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>My Text Fixer Tool</h1>
+
+        <textarea id="textInput"
+            placeholder="Enter your sentence here..."></textarea>
+
+        <br>
+
+        <button onclick="checkDataType()">Check Data Type</button>
+        <button onclick="convertValue()">Convert Value</button>
+        <button onclick="replaceWords()">Replace Words</button>
+        <button onclick="handleError()">Handle Error</button>
+
+        <div class="result">
+            <p><strong>Data Type:</strong> <span id="dataType"></span></p>
+            <p><strong>Converted Value:</strong> <span id="converted"></span></p>
+            <p><strong>Fixed Text:</strong> <span id="fixedText"></span></p>
+            <p><strong>Error Result:</strong> <span id="errorResult"></span></p>
+        </div>
+
+    </div>
+
+    <script>
+
+        
+        function checkDataType() {
+            let text = document.getElementById("textInput").value;
+
+            document.getElementById("dataType").innerHTML = typeof text;
+        }
+
+
+       
+        function convertValue() {
+            let text = document.getElementById("textInput").value;
+
+            let numberValue = Number(text);
+
+            document.getElementById("converted").innerHTML =
+                numberValue;
+        }
+
+
+        
+        function replaceWords() {
+            let text = document.getElementById("textInput").value;
+
+            let fixedText = text.replace(/bad/gi, "good");
+
+            document.getElementById("fixedText").innerHTML =
+                fixedText;
+        }
+
+
+        
+        function handleError() {
+            try {
+                let value = document.getElementById("textInput").value;
+
+                if (value === "") {
+                    throw new Error("Please enter some text!");
+                }
+
+                document.getElementById("errorResult").innerHTML =
+                    "No error! Text is entered successfully.";
+            }
+
+            catch (error) {
+                document.getElementById("errorResult").innerHTML =
+                    error.message;
+            }
+        }
+
+    </script>
+
+</body>
+</html>
+
