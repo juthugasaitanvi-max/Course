@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Event Data Viewer</title>
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f7fb;
+            margin: 0;
+            padding: 40px;
+        }
+
+        .container {
+            max-width: 650px;
+            margin: auto;
+            background: white;
+            padding: 30px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            color: #263b80;
+            text-align: center;
+        }
+
+        p {
+            color: #555;
+            text-align: center;
+        }
+
+        button {
+            display: block;
+            margin: 20px auto;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 8px;
+            background-color: Purple;
+            color: white;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: Purple;
+        }
+
+        #loading {
+            text-align: center;
+            color: Pink;
+            font-weight: bold;
+        }
+
+        #eventDetails {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #e7f5ff;
+            border-radius: 10px;
+            display: none;
+        }
+
+        #eventDetails h2 {
+            color: Pink;
+        }
+
+        #eventDetails p {
+            text-align: left;
+            color: #222;
+            font-size: 17px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>School Event Data Viewer</h1>
+
+        <p>
+            Click the button to load the school event data. The data will be displayed after a short delay to simulate loading time.
+        </p>
+
+        <button onclick="loadEvent()">Load Event</button>
+
+        <div id="loading"></div>
+
+        <div id="eventDetails">
+            <h2 id="eventName"></h2>
+
+            <p>
+                <strong>Date:</strong>
+                <span id="eventDate"></span>
+            </p>
+
+            <p>
+                <strong>Time:</strong>
+                <span id="eventTime"></span>
+            </p>
+
+            <p>
+                <strong>Venue:</strong>
+                <span id="eventVenue"></span>
+            </p>
+
+            <p>
+                <strong>Organizer:</strong>
+                <span id="eventOrganizer"></span>
+            </p>
+
+            <p>
+                <strong>Participants:</strong>
+                <span id="eventParticipants"></span>
+            </p>
+        </div>
+
+    </div>
+
+
+    <script>
+
+        function loadEvent() {
+
+            // Show loading message
+            document.getElementById("loading").innerText =
+                "Loading event data...";
+
+            document.getElementById("eventDetails").style.display = "none";
+
+            setTimeout(function () {
+
+                const eventData = {
+                    name: "Annual Sports Day",
+                    date: "15 October 2026",
+                    time: "9:00 AM",
+                    venue: "School Playground",
+                    organizer: "School Sports Department",
+                    participants: 250
+                };
+
+                const jsonData = JSON.stringify(eventData);
+
+                const eventObject = JSON.parse(jsonData);
+
+                document.getElementById("loading").innerText = "";
+
+                document.getElementById("eventName").innerText =
+                    eventObject.name;
+
+                document.getElementById("eventDate").innerText =
+                    eventObject.date;
+
+                document.getElementById("eventTime").innerText =
+                    eventObject.time;
+
+                document.getElementById("eventVenue").innerText =
+                    eventObject.venue;
+
+                document.getElementById("eventOrganizer").innerText =
+                    eventObject.organizer;
+
+                document.getElementById("eventParticipants").innerText =
+                    eventObject.participants;
+
+                document.getElementById("eventDetails").style.display =
+                    "block";
+
+            }, 2000);
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+
+</head>
+<body>
+    <h1>JSON</h1>
+    <p id="jsonText"></p>
+    <p id="loaderText"></p>
+
+    <p id="name"></p>
+    <p id="class"></p>
+    <p id="age"></p>
+    <p id="timer"></p>
+
+<script>
+let data={ name:"Saitanvi",class:"7th",age:10}
+
+function save(){
+    let jsonText=JSON.stringify(data )
+    let loaderData=JSON.parse(jsonText)
+    document.getElementById("jsonText").innerHTML=jsonText
+    document.getElementById("loaderText").innerHTML=loaderData
+    document.getElementById("name").innerHTML="Name: "+loaderData.name
+    document.getElementById("class").innerHTML="Class: "+loaderData.class
+    document.getElementById("age").innerHTML="Age: "+loaderData.age+" years"
+ }
+count=0
+function Timer(){
+    setTimeout(function(){
+        document.getElementById("timer").innerHTML=count+1
+    },1000)
+}
+
+save()
+Timer()
+</script>
+
+</body>
+</html>  
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
