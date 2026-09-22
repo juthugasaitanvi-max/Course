@@ -1,0 +1,160 @@
+<!-- You will build a Lucky Draw game. Players enter their name and guess a number from 1 to 5. JavaScript checks
+the fields, picks a random lucky number, and tells the player if they won. A timer counts how long they have been on the page.
+
+SKILLS PRACTISED
+Form validation with an ok flag, accessing form data with getElementByld and .value, showing DOM feedback with textContent and style.color, using setinterval to build a seconds timer, and using Math.random() to generate the lucky number.
+
+HOW IT WORKS
+Step 1: Open the starter file in your code editor.
+Step 2: Add var seconds = 0 and setinterval to count up every 1000 milliseconds and show the count in the timer paragraph.
+Step 3: In checkForm(), read the name and guess fields using getElementByld and .value.
+Step 4: Set var ok = true. Check if name is empty - if so, show a red error message and set ok = false.
+Step 5: Check if guess is empty - if so, show a red error message and set ok = false.
+Step 6: If ok is still true, use Math.floor(Math.random() * 5) + 1 to get the lucky number.
+Step 7: Compare guess to lucky. If they match, show a green win message. If not, show a navy try-again
+message with the lucky number.
+Step 8: Test the game by entering your name, guessing different numbers, and checking the timer counts up each second. -->
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lucky Draw Game</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #eaf4ff;
+            padding: 40px;
+        }
+
+        .game {
+            width: 350px;
+            margin: auto;
+            background-color: white;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 12px gray;
+        }
+
+        h1 {
+            color: navy;
+        }
+
+        input {
+            width: 90%;
+            padding: 10px;
+            margin: 8px;
+            border: 1px solid gray;
+            border-radius: 5px;
+        }
+
+        button {
+            padding: 10px 25px;
+            margin-top: 10px;
+            background-color: navy;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: blue;
+        }
+
+        #timer {
+            color: navy;
+            font-weight: bold;
+        }
+
+        #message {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="game">
+        <h1>Lucky Draw</h1>
+
+        <p>Time on page: <span id="timer">0</span> seconds</p>
+
+        <input type="text" id="name" placeholder="Enter your name">
+
+        <input type="number" id="guess" placeholder="Guess a number from 1 to 5" min="1" max="5">
+
+        <br>
+
+        <button onclick="checkForm()">Try Your Luck</button>
+
+        <p id="message"></p>
+    </div>
+
+    <script>
+        var seconds = 0;
+
+        setInterval(function() {
+            seconds++;
+            document.getElementById("timer").textContent = seconds;
+        }, 1000);
+
+        function checkForm() {
+            var name = document.getElementById("name").value;
+            var guess = document.getElementById("guess").value;
+            var ok = true;
+            var message = document.getElementById("message");
+
+            if (name === "") {
+                message.textContent = "Please enter your name.";
+                message.style.color = "red";
+                ok = false;
+            }
+
+            if (guess === "") {
+                message.textContent = "Please enter your guess.";
+                message.style.color = "red";
+                ok = false;
+            }
+
+            if (ok === true) {
+                var lucky = Math.floor(Math.random() * 5) + 1;
+
+                if (Number(guess) === lucky) {
+                    message.textContent = "Congratulations " + name + "! You won! 🎉";
+                    message.style.color = "green";
+                } else {
+                    message.textContent = "Try again, " + name + "! The lucky number was " + lucky + ".";
+                    message.style.color = "navy";
+                }
+            }
+        }
+    </script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
