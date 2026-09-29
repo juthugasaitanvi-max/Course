@@ -1,0 +1,10 @@
+name = input("What is your name? ")
+goal = input("What is your main goal? ")
+time = input("When will you work on your goal? ")
+
+print("\nPersonal Goal Plan")
+print("Name:", name, "Goal:", goal)
+print("I will work on my goal", time, end=".")
+print("\nGood luck,", name + "!")
+print("\nPython reserved words:")
+print(help("keywords"))
