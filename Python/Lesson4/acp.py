@@ -1,31 +1,41 @@
-team1 = int(input("Enter Team 1 points: "))
-team2 = int(input("Enter Team 2 points: "))
+team1 = 120
+team2 = 95
+team3 = 140
+team4 = 110
+team5 = 85
+ 
 
-total = team1 + team2
-average = total / 2
+total = team1 + team2 + team3 + team4 + team5
+average = total / 5
+ 
+print("Total points       :", total)
+print("Average per team   :", average)
+ 
+stars_per_point = 2
+reward_stars = total * stars_per_point
+print("Total reward stars :", reward_stars)
 
-print("\nClassroom Points Calculator")
-print("Team1 Points:",team1)
-print("Team2 Points:",team2)
-print("Total Points:", total)
-print("Average Points:", average)
+boxes = reward_stars // 25
+leftover = reward_stars % 25
+ 
+print("Full boxes packed  :", boxes)
+print("Leftover stars     :", leftover)
 
-stars1 = team1 // 10
-stars2 = team2 // 10
+last_week = 500
+ 
+print("Better than last week? :", total > last_week)
+print("Same as last week?     :", total == last_week)
+print("At least as good?      :", total >= last_week)
+ 
 
-print("Team1 Reward Stars:", stars1)
-print("Team2 Reward Stars:", stars2)
+total += 30
+print("After bonus points :", total)
 
-if team1 > team2:
-    print("Team 1 scored more points!")
-elif team2 > team1:
-    print("Team 2 scored more points!")
-else:
-    print("Both teams scored equally!")
+total -= 15
+print("After missed tasks :", total)
+ 
 
-team1 += 5
-team2 += 5
-
-print("Updated Team 1 Points:", team1)
-print("Updated Team 2 Points:", team2)
-
+reward_stars = total * stars_per_point
+boxes = reward_stars // 25
+ 
+print("Final boxes packed :", boxes)
