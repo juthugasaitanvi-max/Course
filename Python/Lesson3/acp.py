@@ -1,17 +1,20 @@
-name = "Saitanvi"
-age = 12
-club = "Science"
-badge_code = "SC12345"
 
-print(type(name))
-print(type(age))
-print(type(club))
-print(type(badge_code))
+member_name = input("Enter member name: ")
+club_name = input("Enter club name: ")
 
-age = str(age)
+member_number = 8
+points = 9.5
+is_active = True
 
-short_code = badge_code[:4]
+print(member_number, type(member_number))
+print(points, type(points))
+print(is_active, type(is_active))
 
-badge = "Name: " + name + " | Age: " + age + " | Club: " + club + " | Code: " + short_code
+badge_code = member_name[:3] + club_name[-1] + str(member_number)
+print(badge_code)
 
-print(badge)
+print("===== CLUB BADGE =====")
+print("Member: " + member_name)
+print("Club: " + club_name)
+print("Code: " + badge_code)
+print("Points: " + str(points) + " | Active: " + str(is_active))
