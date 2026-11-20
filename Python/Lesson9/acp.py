@@ -1,4 +1,3 @@
-
 # Homework Completion Tracker
 
 total_tasks = 5
