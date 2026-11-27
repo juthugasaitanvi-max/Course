@@ -22,9 +22,9 @@
 #         n-=1
 #     print()
 
+diamond = int(input("Plz enter how many rows u want!!!!! "))
+for i in range(1, diamond + 1):
+    print(" " * (diamond - i) + "* " * i)
 
-diamond=int(input("Plz enter how many rows u want!!!!! "))
-for i in range(1,diamond+1):
-    print(" "*(diamond-i)+"* "*i)
-  
-    
+for i in range(diamond - 1, 0, -1):
+    print(" " * (diamond - i) + "* " * i)
